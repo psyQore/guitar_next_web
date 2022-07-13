@@ -5,11 +5,11 @@ const Layout = ({ children, page }) => {
   return (
     <div>
       <Head>
-      <title>{`GuitarApp - ${page}`}</title>
+        <title>{`GuitarApp - ${page}`}</title>
         <meta name="description" content="Sition Web de Guitarras" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header/>
+      <Header />
       {children}
     </div>
   );
