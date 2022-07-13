@@ -1,14 +1,16 @@
-import React from 'react'
-import Link from 'next/link';
+import Link from "next/link";
+import Layout from "../components/Layout";
 
 const About = () => {
   return (
-    <div>
+    <>
+      <Layout page="Nosotros">
         <h1>Desde Nosotros</h1>
+      </Layout>
 
-        <Link href="/">Ir a inicio</Link>
-    </div>
-  )
-}
+      <Link href="/">Ir a inicio</Link>
+    </>
+  );
+};
 
-export default About
+export default About;
