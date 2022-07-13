@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Header from "../components/Header";
 
 const Layout = ({ children, page }) => {
   return (
@@ -8,8 +9,7 @@ const Layout = ({ children, page }) => {
         <meta name="description" content="Sition Web de Guitarras" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>Desde Layout</h1>
-
+      <Header/>
       {children}
     </div>
   );
