@@ -1,11 +1,19 @@
 import Layout from "../components/Layout";
+import Entry from "../components/Entry";
 
-const Blog = ({result}) => {
-  console.log(result);
+const Blog = ({ entries }) => {
   return (
     <>
       <Layout page="Blog">
-        <h1>Desde Blog</h1>
+        <main className="contenedor">
+          <h2 className="heading">Blog</h2>
+
+          <div>
+            {entries.map((entry) => (
+              <Entry key={entry.id} entry={entry} />
+            ))}
+          </div>
+        </main>
       </Layout>
     </>
   );
@@ -13,16 +21,14 @@ const Blog = ({result}) => {
 
 // Forma de consultar una API de Nextjs
 export async function getServerSideProps() {
-  
-  
-  const url = 'http://localhost:1337/blogs'
-  const response = await fetch(url)
-  const result = await response.json()
+  const url = "http://localhost:1337/blogs";
+  const response = await fetch(url);
+  const entries = await response.json();
 
-    return {
-      props: {
-        result
-      }
-    }
-  }
+  return {
+    props: {
+      entries,
+    },
+  };
+}
 export default Blog;
