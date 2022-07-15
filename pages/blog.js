@@ -3,6 +3,7 @@ import Entry from "../components/Entry";
 import styles from '../styles/Blog.module.css';
 
 const Blog = ({ entries }) => {
+  console.log('Prueba');
   return (
     <>
       <Layout page="Blog">
