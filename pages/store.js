@@ -2,7 +2,6 @@ import Layout from "../components/Layout";
 import List from '../components/List';
 
 const Store = ({guitars}) => {
-  console.log(guitars);
   return (
     <>
       <Layout page="Virtual Store">
