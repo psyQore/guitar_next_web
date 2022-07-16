@@ -5,7 +5,7 @@ import styles from "../styles/Entry.module.css";
 
 
 const Entry = ({ entry }) => {
-  const { title, resume, image, published_at, id } = entry;
+  const { title, resume, image, published_at, id, url } = entry;
   return (
     <article>
       <Image
@@ -21,7 +21,7 @@ const Entry = ({ entry }) => {
         <h3>{title}</h3>
         <p className={styles.date}>{formatDate(published_at)}</p>
         <p className={styles.resume}>{resume}</p>
-        <Link href={`/blog/${id}`}>
+        <Link href={`/blog/${url}`}>
           <a className={styles.button}>Leer Entrada</a>
         </Link>
       </div>

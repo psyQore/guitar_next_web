@@ -3,7 +3,6 @@ import Entry from "../components/Entry";
 import styles from '../styles/Blog.module.css';
 
 const Blog = ({ entries }) => {
-
   // const url = `${process.env.NEXT_PUBLIC_API_URL}/blogs`;
 
   return (

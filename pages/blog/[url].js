@@ -4,12 +4,11 @@ import Layout from "../../components/Layout";
 import { formatDate } from "../../helpers";
 import styles from "../../styles/Entry.module.css";
 
-
 const EntryBlog = ({ entry }) => {
-  const { content, image, published_at, title } = entry;
+  const { content, image, published_at, title } = entry[0];
 
   return (
-    <Layout>
+    <Layout page={title}>
       <main className="contenedor">
         <h1 className="heading">{title}</h1>
         <article className={styles.entry}>
@@ -39,7 +38,7 @@ export async function getStaticPaths() {
   const entries = await response.json();
 
   const paths = entries.map((entry) => ({
-    params: { id: entry.id.toString() },
+    params: { url: entry.url },
   }));
 
   // console.log(entries);
@@ -49,14 +48,14 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params: { id } }) {
-  const url = `${process.env.API_URL}/blogs/${id}`;
-  const response = await fetch(url);
+export async function getStaticProps({ params: { url } }) {
+  const urlBlog = `${process.env.API_URL}/blogs?url=${url}`;
+  const response = await fetch(urlBlog);
   const entry = await response.json();
 
   return {
     props: {
-      entry,
+      entry
     },
   };
 }
