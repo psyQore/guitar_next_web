@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Layout from "../../components/Layout";
 import { formatDate } from "../../helpers";
 import styles from "../../styles/Entry.module.css";
@@ -22,6 +23,9 @@ const EntryBlog = ({ entry }) => {
           <div className={styles.content}>
             <p className={styles.date}>{formatDate(published_at)}</p>
             <p className={styles.text}>{content}</p>
+          </div>
+          <div className={styles.return}>
+            <Link href="/blog">⇽ Volver al blog</Link>
           </div>
         </article>
       </main>
