@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Layout from "../../components/Layout";
 import { formatDate } from "../../helpers";
+import styles from "../../styles/Entry.module.css";
 
 
 const EntryBlog = ({ entry }) => {
@@ -10,7 +11,7 @@ const EntryBlog = ({ entry }) => {
     <Layout>
       <main className="contenedor">
         <h1 className="heading">{title}</h1>
-        <article>
+        <article className={styles.entry}>
           <Image
             layout="responsive"
             width={800}
@@ -18,9 +19,9 @@ const EntryBlog = ({ entry }) => {
             src={image.url}
             alt={`Imaagen entrada ${title}`}
           />
-          <div>
-            <p>{formatDate(published_at)}</p>
-            <p>{content}</p>
+          <div className={styles.content}>
+            <p className={styles.date}>{formatDate(published_at)}</p>
+            <p className={styles.text}>{content}</p>
           </div>
         </article>
       </main>

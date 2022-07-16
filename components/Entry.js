@@ -3,6 +3,7 @@ import Image from "next/image";
 import { formatDate } from "../helpers";
 import styles from "../styles/Entry.module.css";
 
+
 const Entry = ({ entry }) => {
   const { title, resume, image, published_at, id } = entry;
   return (
