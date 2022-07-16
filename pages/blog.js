@@ -3,7 +3,9 @@ import Entry from "../components/Entry";
 import styles from '../styles/Blog.module.css';
 
 const Blog = ({ entries }) => {
-  console.log('Prueba');
+
+  // const url = `${process.env.NEXT_PUBLIC_API_URL}/blogs`;
+
   return (
     <>
       <Layout page="Blog">
@@ -23,7 +25,8 @@ const Blog = ({ entries }) => {
 
 // Forma de consultar una API de Nextjs
 export async function getServerSideProps() {
-  const url = "http://localhost:1337/blogs";
+  const url = `${process.env.API_URL}/blogs`;
+
   const response = await fetch(url);
   const entries = await response.json();
 
