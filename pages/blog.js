@@ -23,8 +23,8 @@ const Blog = ({ entries }) => {
 };
 
 // Forma de consultar una API de Nextjs
-export async function getServerSideProps() {
-  const url = `${process.env.API_URL}/blogs?_sort=created_at:desc`;
+export async function getStaticProps() {
+  const url = `${process.env.API_URL}/blogs?_sort=createdAt:desc`;
 
   const response = await fetch(url);
   const entries = await response.json();
