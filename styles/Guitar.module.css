@@ -75,3 +75,19 @@
   background-color: var(--black);
   cursor: pointer;
 }
+.return {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  padding-top: 5rem;
+}
+.return a {
+  color: var(--black);
+  text-decoration: none;
+  font-size: 2rem;
+  margin: 0;
+}
+.return a:hover {
+  color: var(--primary);
+}

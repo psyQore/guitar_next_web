@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from 'next/link';
 import Layout from "../../components/Layout";
 import styles from "../../styles/Guitar.module.css";
 
@@ -37,6 +38,9 @@ const Product = ({ guitar }) => {
             </select>
             <input type="submit" value="Agregar al Carrito" />
           </form>
+          <div className={styles.return}>
+            <Link href="/store">⇽ Volver</Link>
+          </div>
         </div>
       </div>
     </Layout>
@@ -48,8 +52,6 @@ export async function getServerSideProps({ query: { url } }) {
   const urlGuitar = `${process.env.API_URL}/guitars?url=${url}`;
   const response = await fetch(urlGuitar);
   const guitar = await response.json();
-
-  console.log(guitar);
 
   return {
     props: {
