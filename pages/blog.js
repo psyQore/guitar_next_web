@@ -1,6 +1,5 @@
 import Layout from "../components/Layout";
-import Entry from "../components/Entry";
-import styles from '../styles/Blog.module.css';
+import ListBlog from '../components/ListBlog';
 
 const Blog = ({ entries }) => {
   // const url = `${process.env.NEXT_PUBLIC_API_URL}/blogs`;
@@ -9,13 +8,7 @@ const Blog = ({ entries }) => {
     <>
       <Layout page="Blog">
         <main className="contenedor">
-          <h2 className="heading">Blog</h2>
-
-          <div className={styles.blog}>
-            {entries.map((entry) => (
-              <Entry key={entry.id} entry={entry} />
-            ))}
-          </div>
+          <ListBlog entries={entries} />
         </main>
       </Layout>
     </>
