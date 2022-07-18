@@ -1,8 +1,8 @@
 import Layout from "../components/Layout";
 import List from "../components/List";
+import Course from '../components/Course';
 
 export default function Home({ guitars, course }) {
-  console.log(guitars, course);
   return (
     <>
       <Layout page="Inicio">
@@ -11,6 +11,11 @@ export default function Home({ guitars, course }) {
 
           <List guitars={guitars} />
         </main>
+
+        <Course
+          course={course}
+        />
+
       </Layout>
     </>
   );
