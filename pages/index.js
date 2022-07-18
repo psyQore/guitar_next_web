@@ -4,9 +4,10 @@ import Course from "../components/Course";
 import ListBlog from "../components/ListBlog";
 
 export default function Home({ guitars, course, entries }) {
+  console.log(guitars);
   return (
     <>
-      <Layout page="Inicio">
+      <Layout page="Inicio" guitar={guitars[4]}>
         <main className="contenedor">
           <h1 className="heading">Nueestra Coleección</h1>
           <List guitars={guitars} />
