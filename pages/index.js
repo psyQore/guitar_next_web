@@ -7,7 +7,7 @@ export default function Home({ guitars, course, entries }) {
   console.log(guitars);
   return (
     <>
-      <Layout page="Inicio" guitar={guitars[4]}>
+      <Layout page="Inicio" guitar={guitars[9]}>
         <main className="contenedor">
           <h1 className="heading">Nueestra Coleección</h1>
           <List guitars={guitars} />
