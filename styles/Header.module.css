@@ -23,6 +23,8 @@
   margin-top: 5rem;
   display: flex;
   gap: 2rem;
+  position: relative;
+  z-index: 1;
 }
 @media (min-width: 768px) {
   .navegation {
@@ -97,7 +99,29 @@
   .guitar {
     display: block;
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: -2rem;
+    bottom: -9px;
+    animation-name: showImage;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes  showImage {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+
   }
 }

@@ -4,7 +4,6 @@ import Course from "../components/Course";
 import ListBlog from "../components/ListBlog";
 
 export default function Home({ guitars, course, entries }) {
-  console.log(guitars);
   return (
     <>
       <Layout page="Inicio" guitar={guitars[9]}>
