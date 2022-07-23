@@ -1,8 +1,8 @@
-import React from "react";
 import Layout from "../components/Layout";
 import styles from "../styles/Cart.module.css";
 
-const Cart = () => {
+const Cart = ({ cart }) => {
+
   return (
     <Layout page={"Carrito de Compras"}>
       <h1 className="heading">Carrito</h1>

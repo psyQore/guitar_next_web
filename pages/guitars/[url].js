@@ -3,8 +3,14 @@ import Link from 'next/link';
 import Layout from "../../components/Layout";
 import styles from "../../styles/Guitar.module.css";
 
-const Product = ({ guitar }) => {
+const Product = ({ guitar, addToCart }) => {
   const { name, price, image, description, url } = guitar[0];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Agregarlo al carrito
+   
+  }
 
   return (
     <Layout page={`Guitarra ${name}`}>
@@ -21,7 +27,7 @@ const Product = ({ guitar }) => {
           <p className={styles.description}>{description}</p>
           <p className={styles.price}>${price}</p>
 
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={handleSubmit}>
             <label>Cantidad:</label>
             <select>
               <option>-- Seleccione --</option>
