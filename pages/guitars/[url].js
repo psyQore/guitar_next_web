@@ -1,16 +1,31 @@
+import { useState } from "react";
 import Image from "next/image";
-import Link from 'next/link';
+import Link from "next/link";
 import Layout from "../../components/Layout";
 import styles from "../../styles/Guitar.module.css";
 
 const Product = ({ guitar, addToCart }) => {
-  const { name, price, image, description, url } = guitar[0];
+  const [quantity, setQuantity] = useState(1);
+  const { name, price, image, description, url, id } = guitar[0];
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (quantity < 1) {
+      alert("Cantidad no válida");
+    }
+
     // Agregarlo al carrito
-   
-  }
+    const guitarSelect = {
+      id,
+      image: image[0].url,
+      name,
+      price,
+      quantity,
+    };
+
+    addToCart(guitarSelect);
+  };
 
   return (
     <Layout page={`Guitarra ${name}`}>
@@ -29,7 +44,10 @@ const Product = ({ guitar, addToCart }) => {
 
           <form className={styles.form} onSubmit={handleSubmit}>
             <label>Cantidad:</label>
-            <select>
+            <select
+              value={quantity}
+              onChange={(e) => setQuantity(parseInt(e.target.value))}
+            >
               <option>-- Seleccione --</option>
               <option value="1"> 1 </option>
               <option value="2"> 2 </option>
