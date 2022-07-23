@@ -20,7 +20,7 @@
 }
 
 .navegation {
-  margin-top: 5rem;
+  margin-top: 2rem;
   display: flex;
   gap: 2rem;
   position: relative;
@@ -40,8 +40,8 @@
   text-transform: uppercase;
   padding: 1.5rem;
   transition-property: background-color;
-  transition-duration: 0.3s;
-  border-radius: 5px;
+  transition-duration: 0.6s;
+  border-radius: 2px;
 }
 
 .navegation a:hover {
