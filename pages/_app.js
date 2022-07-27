@@ -1,9 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/normalize.css";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    const cartLs = JSON.parse(localStorage.getItem("cart")) ?? [];
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   const addToCart = (product) => {
     if (cart.some((article) => article.id === product.id)) {
@@ -13,7 +21,7 @@ function MyApp({ Component, pageProps }) {
         }
         return article;
       });
-      setCart(cartUpdated)
+      setCart(cartUpdated);
     } else {
       setCart([...cart, product]);
     }
