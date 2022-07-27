@@ -20,7 +20,7 @@ const Header = ({ guitar }) => {
             <Link href="/blog">Blog</Link>
             <Link href="/store">Store</Link>
             <Link href="cart">
-              <a>
+              <a className={styles.icon}>
                 <Image
                   layout="fixed"
                   width={30}
